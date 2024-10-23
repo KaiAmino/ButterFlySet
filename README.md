@@ -21,7 +21,7 @@ This repository provides the dataset ButterFlySet, the first video dataset of fl
 The following options are required:
 - `-json` specifies the name and location of the directory containing the scenes you are importing to the dataset. The default is set to `jsons`. If you want to create a new dataset based on part of the 'original' dataset, it is recommended to modify the contents of the 'jsons' directory.
 - `-phase` specifies the name of your new dataset. Default is set to `train`.
-- `-user` specifies your name. To match the worker in DeepLabCut, it is preferable to use your initials (e.g., Kai Amino &rarr KA).
+- `-user` specifies your name. To match the worker in DeepLabCut, it is preferable to use your initials (e.g., Kai Amino → KA).
 
 3. The 'dataset' directory can be directory used for the pose estimation with DeepLabCut and SLEAP.
 
