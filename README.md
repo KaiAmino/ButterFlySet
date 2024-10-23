@@ -14,7 +14,7 @@ This repository provides the dataset ButterFlySet, the first video dataset of fl
 
 ## How to Use
 
-1. Download at least the 'json' and 'original' directories from the Drive under the ButterFlySet directory.
+1. Download at least the 'json' and 'original' directories from the Drive under the ButterFlySet-main directory.
 
 2. Run `python3 json2h5.py` from the directory where the script is located. The new directory (default name is 'train') is generated which contains .h5 and .csv files.
 
