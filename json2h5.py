@@ -28,7 +28,7 @@ os.makedirs(os.path.join(phase, 'videos'), exist_ok = True)
 
 json_dirs = sorted([item for item in os.listdir(json_dir) if item.startswith("OK_")], key=lambda x: int(x.split('_')[1]))
 
-h5_output_path = os.path.join(phase, 'dataset', 'dataCollectedData_' + user + '.h5')
+h5_output_path = os.path.join(phase, 'dataset', 'CollectedData_' + user + '.h5')
 csv_output_path = os.path.join(phase, 'dataset', 'CollectedData_' + user + '.csv')
 img_path_new = os.path.join(phase, 'dataset')
 
