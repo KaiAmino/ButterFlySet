@@ -26,7 +26,7 @@ user = opt.user
 os.makedirs(os.path.join(phase, 'dataset'), exist_ok = True)
 os.makedirs(os.path.join(phase, 'videos'), exist_ok = True)
 
-json_dirs = sorted(os.listdir(json_dir), key=lambda x: int(x.split('_')[1]))
+json_dirs = sorted([item for item in os.listdir(json_dir) if item.startswith("OK_")], key=lambda x: int(x.split('_')[1]))
 
 h5_output_path = os.path.join(phase, 'dataset', 'dataCollectedData_' + user + '.h5')
 csv_output_path = os.path.join(phase, 'dataset', 'CollectedData_' + user + '.csv')
