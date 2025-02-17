@@ -8,8 +8,8 @@ This repository provides the dataset ButterFlySet, the first video dataset of fl
 | Data | Size | Download (zip) |
 | :---: | :---: | :---: |
 | json | 15.9 MB | [GoogleDrive](https://drive.google.com/drive/folders/1hnuOXGnViC3GLgfz2ndvaQJyCDpdqXSr?usp=share_link) |
-| original frames | 3.8 GB | [GoogleDrive](https://drive.google.com/drive/folders/1pvHIArTxYaDH7CTkW9TaqXSxqZrygqhi?usp=share_link) |
-| annotated frames | 5.3 GB | [GoogleDrive](https://drive.google.com/drive/folders/1axcFOQKBO7f72v7qjN5oD7VlWOoLU2LM?usp=share_link) |
+| original frames (.jpg) | 3.8 GB | [GoogleDrive](https://drive.google.com/drive/folders/1pvHIArTxYaDH7CTkW9TaqXSxqZrygqhi?usp=share_link) |
+| annotated frames (.jpg) | 5.3 GB | [GoogleDrive](https://drive.google.com/drive/folders/1axcFOQKBO7f72v7qjN5oD7VlWOoLU2LM?usp=share_link) |
 
 
 ## How to Use
