@@ -16,7 +16,7 @@ This repository provides the dataset ButterFlySet, the first video dataset of fl
 
 1. Download at least the 'json' and 'original' directories from the Drive under the ButterFlySet-main directory.
 
-2. Run `python json2h5.py` from the directory where the script is located. The new directory (default name is 'data_train') will be generated which contains .h5 and .csv files and all frames.
+2. Run `python json2h5.py` from the directory where the script is located. The new directory (default name is 'data_train') will be generated which contains .h5 and .csv files and all frames. To run this code, you need to install the required packages necessary for DeepLabCut.
 
 The following options are required:
 - `-json` specifies the name and location of the directory containing the scenes you are importing to the dataset. The default is set to `'jsons'`. If you want to create a new dataset based on part of the original dataset, it is recommended to modify the contents of the 'jsons' directory.
