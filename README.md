@@ -26,7 +26,7 @@ The following options are required:
 
 3. The 'dataset' directory can be directory used for the pose estimation with DeepLabCut and SLEAP.
 
-4. If you want to create the video for the initialization of DeepLabCut, select `-mkvideo` option as `True`. `-fps` also specifies the frames/second of the videos to vbe created.
+4. If you want to create the video for the initialization of DeepLabCut, select `-mkvideo` option as `True`. `-fps` also specifies the frames/second of the videos to be created (Default is set to 60).
 
 
 ## Acknowledgements
