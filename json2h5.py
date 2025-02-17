@@ -9,33 +9,42 @@ from PIL import Image
 import random
 import shutil
 import argparse
+import tqdm
+import glob
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('-json', '--json_directory', type = str, default = 'jsons')
+parser.add_argument('-name', '--dataset_name', type = str, default = 'data_train')
 parser.add_argument('-phase', '--phase', type = str, default = 'train')
 parser.add_argument('-user', '--user', type = str, default = 'KA')
+parser.add_argument('-mkvideo', '--make_video', type=lambda x: x.lower() in ('true', '1'), default = True)
+parser.add_argument('-fps', '--video_fps', type = int, default = 60)
 opt = parser.parse_args()
 
 def split_list_into_groups(lst, group_size):
     return [lst[i:i + group_size] for i in range(0, len(lst), group_size)]
 
 json_dir = opt.json_directory
+name = opt.dataset_name
 phase = opt.phase
 user = opt.user
 
-os.makedirs(os.path.join(phase, 'dataset'), exist_ok = True)
-os.makedirs(os.path.join(phase, 'videos'), exist_ok = True)
+os.makedirs(os.path.join(name, 'dataset'), exist_ok = True)
+os.makedirs(os.path.join(name, 'videos'), exist_ok = True)
+
+# Making dataset files
+print('Creating a dataset.')
 
 json_dirs = sorted([item for item in os.listdir(json_dir) if item.startswith("OK_")], key=lambda x: int(x.split('_')[1]))
 
-h5_output_path = os.path.join(phase, 'dataset', 'CollectedData_' + user + '.h5')
-csv_output_path = os.path.join(phase, 'dataset', 'CollectedData_' + user + '.csv')
-img_path_new = os.path.join(phase, 'dataset')
+h5_output_path = os.path.join(name, 'dataset', 'CollectedData_' + user + '.h5')
+csv_output_path = os.path.join(name, 'dataset', 'CollectedData_' + user + '.csv')
+img_path_new = os.path.join(name, 'dataset')
 
 h5_data = []
 names = []
 c = 1
-for i in range(len(json_dirs)):
+for i in tqdm.tqdm(range(len(json_dirs))):
     jsons = os.listdir(os.path.join(json_dir, json_dirs[i]))
     jsons = sorted(jsons, key=lambda x: int(x.split('_')[2].split('.')[0]))
 
@@ -44,7 +53,7 @@ for i in range(len(json_dirs)):
         d = json.load(f)
 
         img_name_original = d['name']
-        img_name_new = phase + '_' + str(c).zfill(4) + '.jpg'
+        img_name_new = 'img' + str(c).zfill(4) + '.jpg'
         shutil.copy2(os.path.join('original', d['name']), os.path.join(img_path_new, img_name_new))
 
         img_data = []
@@ -83,4 +92,22 @@ with pd.HDFStore(h5_output_path, mode='w') as store:
 with open(csv_output_path, 'w') as f:
     df.to_csv(f)
 
-    
+
+# Making videos
+if opt.make_video:
+    print('Creating a video.')
+    image_folder = os.path.join(name, 'dataset')
+    output_video = os.path.join(name, 'videos', name + '.mp4')
+
+    images = sorted(glob.glob(os.path.join(image_folder, "img*.jpg")))
+    frame = cv2.imread(images[0])
+    height, width, layers = frame.shape
+    fps = opt.video_fps
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    video = cv2.VideoWriter(output_video, fourcc, fps, (width, height))
+    for i in tqdm.tqdm(range(len(images))):
+        img_path = images[i]
+        frame = cv2.imread(img_path)
+        video.write(frame)
+    video.release()
+    cv2.destroyAllWindows()
