@@ -26,7 +26,7 @@ The following options are required:
 
 3. The 'dataset' directory can be directory used for the pose estimation with DeepLabCut and SLEAP.
 
-4. If you want to create the video for the initialization of DeepLabCut, run `ffmpeg -r 24 -i train/dataset/train_%04d.jpg -vcodec mjpeg -qscale 0 train/videos/train.avi`. Please change the 'train' part to the name of the phase you specified in step 2.
+4. If you want to create the video for the initialization of DeepLabCut, select `-mkvideo` option as `True`. `-fps` also specifies the frames/second of the videos to vbe created.
 
 
 ## Acknowledgements
