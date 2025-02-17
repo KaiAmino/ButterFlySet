@@ -14,7 +14,7 @@ This repository provides the dataset ButterFlySet, the first video dataset of fl
 
 ## How to Use
 
-1. Download at least the json and original frames from the GoogleDrive above.
+1. Download at least json and original frames from the GoogleDrive above.
 
 2. Run `python json2h5.py` from the directory where the script is located. The new directory (default name is 'data_train') will be generated which contains .h5 and .csv files. To run this code, you need to install the required packages necessary for DeepLabCut.
 
