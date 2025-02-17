@@ -16,7 +16,7 @@ parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFo
 parser.add_argument('-json', '--json_directory', type = str, default = 'jsons')
 parser.add_argument('-name', '--dataset_name', type = str, default = 'data_train')
 parser.add_argument('-phase', '--phase', type = str, default = 'train')
-parser.add_argument('-user', '--user', type = str, default = 'KA')
+parser.add_argument('-user', '--user', type = str, default = 'TY')
 parser.add_argument('-mkvideo', '--make_video', type=lambda x: x.lower() in ('true', '1'), default = True)
 parser.add_argument('-fps', '--video_fps', type = int, default = 60)
 opt = parser.parse_args()
