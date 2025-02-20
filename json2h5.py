@@ -15,7 +15,6 @@ import glob
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('-json', '--json_directory', type = str, default = 'jsons')
 parser.add_argument('-name', '--dataset_name', type = str, default = 'data_train')
-parser.add_argument('-phase', '--phase', type = str, default = 'train')
 parser.add_argument('-user', '--user', type = str, default = 'TY')
 parser.add_argument('-mkvideo', '--make_video', type=lambda x: x.lower() in ('true', '1'), default = True)
 parser.add_argument('-fps', '--video_fps', type = int, default = 60)
@@ -26,7 +25,7 @@ def split_list_into_groups(lst, group_size):
 
 json_dir = opt.json_directory
 name = opt.dataset_name
-phase = opt.phase
+phase = name
 user = opt.user
 
 os.makedirs(os.path.join(name, 'dataset'), exist_ok = True)
