@@ -1,6 +1,9 @@
 # ButterFlySet
 
-This repository provides the dataset ButterFlySet, the first video dataset of flying butterflies and the largest dataset for insect pose estimation recorded in the wild, containing 7440 frames with nine key points annotation.
+This is the official repository for ButterFlySet which is provided in a paper ["ButterFlySet: A 2D video dataset for pose
+estimation of the flying butterflies in the wild" (Amino & Fujii, 2024)](https://homepages.inf.ed.ac.uk/rbf/VAIB24PAPERS/vaib24ka.pdf) accepted in _Visual observation and analysis of Vertebrate And Insect Behavior 2024 (VAIB2024)_.
+
+ButterFlySet is the first video dataset of flying butterflies and the largest dataset for insect pose estimation recorded in the wild, containing 7440 frames with nine key points annotation.
 
 
 ## Download
