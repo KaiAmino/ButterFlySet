@@ -5,6 +5,7 @@ estimation of the flying butterflies in the wild" (Amino & Fujii, 2024)](https:/
 
 ButterFlySet is the first video dataset of flying butterflies and the largest dataset for insect pose estimation recorded in the wild, containing 7440 frames with nine key points annotation.
 
+<img src="https://github.com/KaiAmino/ButterFlySet/blob/main/samples/ButterFlySet_sample.gif" alt="samples of ButterFlySet" width="720">
 
 ## Download
 
